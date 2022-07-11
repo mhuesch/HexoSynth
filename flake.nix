@@ -2,7 +2,7 @@
   description = "HexoSynth";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     flake-utils.url = "github:numtide/flake-utils";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
@@ -20,11 +20,15 @@
       pkgs.mkShell {
         buildInputs = with pkgs; [
           (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default))
-          pkg-config
-          xorg.libxcb
-          xorg.libX11
+          libglvnd
           libjack2
+          openssl
+          pkg-config
+          python3Minimal
           qjackctl
+          xorg.libX11
+          xorg.libxcb
+          xorg.libXcursor
         ];
       };
   });
