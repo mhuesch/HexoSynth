@@ -8,3 +8,5 @@ jack_standalone/*.hxy
 /*.hxy
 Cargo.lock
 gui_tests/target/
+
+.direnv/
