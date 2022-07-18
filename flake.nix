@@ -30,6 +30,12 @@
           xorg.libxcb
           xorg.libXcursor
         ];
+        # this doesn't seem to do anything
+        shellHook = ''export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath [
+          pkgs.xorg.libX11
+          pkgs.xorg.libxcb
+          pkgs.xorg.libXcursor
+        ]}"'';
       };
   });
 }
