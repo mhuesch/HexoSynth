@@ -29,6 +29,7 @@
           xorg.libX11
           xorg.libxcb
           xorg.libXcursor
+          xorg.xcbutilwm
         ];
         # this doesn't seem to do anything
         shellHook = ''export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath [
